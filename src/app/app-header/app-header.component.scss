@@ -1,0 +1,5 @@
+.main-nav {
+  &:focus-within {
+    box-shadow: none;
+  }
+}

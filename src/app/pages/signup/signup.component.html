@@ -1,0 +1,16 @@
+<div class="signup flex column align-center justify-center">
+  <h2>Signup</h2>
+  <form class="flex column align-center" (submit)="onSignup()">
+    <span class="p-float-label">
+      <input
+        id="float-input"
+        type="text"
+        name="name"
+        [(ngModel)]="name"
+        pInputText
+      />
+      <label for="float-input">Username</label>
+    </span>
+    <p-button (click)="onSignup()" label="Signup"></p-button>
+  </form>
+</div>

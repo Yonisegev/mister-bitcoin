@@ -1,0 +1,9 @@
+<div class="home-page flex column align-center justify-center">
+  <h1>Hello, {{ user.name }}</h1>
+  <h3>BTC: {{ user.coins }}</h3>
+  <h3>USD: {{ userBtcToUsd | currency }}</h3>
+  <div class="home-page-moves">
+    <h2 *ngIf="moves.length" class="moves-heading">Last Moves</h2>
+    <app-moves-list [moves]="moves"></app-moves-list>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div *ngFor="let chart of charts" class="flex column align-center">
+  <google-chart
+    class="chart"
+    [title]="chart.title"
+    [type]="chart.type"
+    [data]="chart.data"
+    [columns]="chart.columns"
+    [options]="chart.options"
+  >
+  </google-chart>
+</div>

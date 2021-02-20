@@ -1,0 +1,28 @@
+<div class="transfer-fund flex column align-center">
+  <h3>Transfer Funds to {{ contact.name }}</h3>
+  <form class="flex column align-center" (submit)="onTransferFunds()">
+    <p-inputNumber
+      [(ngModel)]="amount"
+      name="amount"
+      [showButtons]="true"
+      buttonLayout="horizontal"
+      spinnerMode="horizontal"
+      decrementButtonClass="p-button-danger"
+      incrementButtonClass="p-button-success"
+      incrementButtonIcon="pi pi-plus"
+      decrementButtonIcon="pi pi-minus"
+      mode="currency"
+      min="0"
+      currency="BTC"
+      class="amount-input"
+    ></p-inputNumber>
+    <button
+      pButton
+      type="button"
+      label="Transfer"
+      (click)="onTransferFunds()"
+      class="transfer-btn"
+    ></button>
+  </form>
+  {{ msg }}
+</div>

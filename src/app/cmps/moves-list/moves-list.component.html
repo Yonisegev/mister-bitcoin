@@ -1,0 +1,7 @@
+<div class="moves-list">
+  <div class="move-preview" *ngFor="let move of moves">
+    <p class="move-date">{{ move.at | date: "d/MM/yy, h:mm a" }}</p>
+    <p>Transferred {{ move.amount }} coins to {{ move.to }}</p>
+    <p-divider type="dashed"></p-divider>
+  </div>
+</div>

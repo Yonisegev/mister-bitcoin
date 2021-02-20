@@ -1,0 +1,44 @@
+<!-- <app-contact-preview
+  *ngFor="let contact of contacts"
+  [contact]="contact"
+  (click)="selectContact(contact._id)"
+></app-contact-preview> -->
+
+<div *ngIf="contacts" class="card">
+  <p-orderList
+    [value]="contacts"
+    [(selection)]="selectedContact"
+    [listStyle]="{ height: 'auto' }"
+    header="My Contacts"
+    filterBy="phone,name"
+    filterPlaceholder="Search"
+  >
+    <ng-template let-contact pTemplate="item">
+      <div class="contact-item flex space-around">
+        <div class="image-container flex align-center justify-center">
+          <p-avatar
+            image="https://robohash.org/{{ contact.name }}.png?set=set5"
+            size="xlarge"
+          ></p-avatar>
+        </div>
+        <div class="contact-list-detail">
+          <div>
+            <i class="pi pi-user contact-name-icon"></i>
+            <h5 class="p-mb-2">{{ contact.name }}</h5>
+          </div>
+          <div>
+            <i class="pi pi-envelope contact-mail-icon"></i>
+            <h5 class="p-mb-2">{{ contact.email }}</h5>
+          </div>
+          <div>
+            <i class="pi pi-phone contact-phone-icon"></i>
+            <h5 class="contact-category">{{ contact.phone }}</h5>
+          </div>
+        </div>
+      </div>
+      <p-divider></p-divider>
+    </ng-template>
+  </p-orderList>
+
+  {{ selectedContact | json }}
+</div>

@@ -1,0 +1,6 @@
+.chart {
+  width: 100%;
+  @media (min-width: 800px) {
+    width: 700px;
+  }
+}

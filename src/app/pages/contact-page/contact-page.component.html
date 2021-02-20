@@ -1,0 +1,12 @@
+<!-- <app-contact-filter (onFilterBy)="onFilter($event)"> </app-contact-filter> -->
+<app-contact-list [contacts]="contacts$ | async"></app-contact-list>
+<div class="add-contact-btn">
+  <button
+    (click)="onAddContact()"
+    pButton
+    type="button"
+    class="p-button-success p-button-rounded"
+    icon="pi pi-user-plus"
+    iconPos="left"
+  ></button>
+</div>

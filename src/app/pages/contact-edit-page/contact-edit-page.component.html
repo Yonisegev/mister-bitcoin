@@ -1,0 +1,44 @@
+<div class="contact-edit">
+  <form
+    class="flex column justify-center align-center"
+    (submit)="onAddContact()"
+  >
+    <div class="edit-actions flex space-between">
+      <button
+        pButton
+        type="button"
+        class="p-button-secondary p-button-rounded"
+        icon="pi pi-arrow-left"
+        (click)="goBack()"
+        title="Back"
+      ></button>
+      <button
+        *ngIf="contact._id"
+        pButton
+        type="button"
+        class="p-button-secondary p-button-rounded remove-icon"
+        icon="pi pi-trash"
+        (click)="onRemoveContact()"
+        title="Remove Contact"
+      ></button>
+    </div>
+    <span class="p-float-label">
+      <input type="text" pInputText name="name" [(ngModel)]="contact.name" />
+      <label for="name">Name</label>
+    </span>
+    <span class="p-float-label">
+      <input type="text" pInputText name="email" [(ngModel)]="contact.email" />
+      <label for="email">Email</label>
+    </span>
+    <span class="p-float-label">
+      <input type="text" pInputText name="phone" [(ngModel)]="contact.phone" />
+      <label for="phone">Phone</label>
+    </span>
+    <p-button
+      type="submit"
+      label="Save"
+      icon="pi pi-check"
+      iconPos="right"
+    ></p-button>
+  </form>
+</div>

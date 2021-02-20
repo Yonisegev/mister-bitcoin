@@ -1,0 +1,11 @@
+<div class="contact-filter">
+  <form>
+    <input
+      type="text"
+      name="term"
+      [(ngModel)]="filterBy.term"
+      placeholder="Search Contact"
+      (input)="onFilterBy.emit(filterBy)"
+    />
+  </form>
+</div>

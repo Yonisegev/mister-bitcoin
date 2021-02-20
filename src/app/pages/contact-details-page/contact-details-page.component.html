@@ -1,0 +1,33 @@
+<div class="contact-details flex column align-center">
+  <div class="contact-info flex column align-center">
+    <div class="actions-container flex space-between">
+      <button
+        pButton
+        type="button"
+        class="p-button-secondary p-button-rounded"
+        icon="pi pi-arrow-left"
+        (click)="onGoBack()"
+        title="Back"
+      ></button>
+      <button
+        pButton
+        type="button"
+        class="p-button-secondary p-button-rounded"
+        icon="pi pi-user-edit"
+        (click)="onEditContact()"
+        title="Edit Contact"
+      ></button>
+    </div>
+    <div class="image-container flex justify-center">
+      <p-avatar
+        image="https://robohash.org/{{ contact.name }}.png?set=set5"
+        size="xlarge"
+      ></p-avatar>
+    </div>
+    <h1>{{ contact.name }}</h1>
+    <h3>{{ contact.email }}</h3>
+    <h3>{{ contact.phone }}</h3>
+  </div>
+  <app-transfer-fund [contact]="contact"></app-transfer-fund>
+  <app-moves-list [moves]="contactMoves"></app-moves-list>
+</div>
